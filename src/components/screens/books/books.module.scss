@@ -1,0 +1,61 @@
+@import '@/assets/styles/variables';
+
+.main {
+	> div:first-child {
+		position: relative;
+
+		> div:last-child {
+			> a {
+				> div {
+					width: 100%;
+					box-shadow: $box-shadow;
+
+					font-size: 1.125rem;
+					color: $black;
+					text-transform: uppercase;
+
+					position: absolute;
+					z-index: 3;
+				}
+
+				img {
+					width: 100%;
+					max-width: 55px;
+					margin-top: 5px;
+				}
+
+				&:first-child {
+					> div {
+						max-width: 149px;
+						height: 204px;
+						padding: 102px 20px 36px;
+						background-color: rgba(158, 152, 220, 1);
+
+						top: calc(0% + 79px);
+						left: 94%;
+					}
+				}
+
+				&:last-child {
+					> div {
+						max-width: 137px;
+						height: 273px;
+						padding: 149px 47px 36px 21px;
+						background-color: rgba(255, 143, 230, 1);
+
+						top: calc(0% + 359px);
+						left: calc(100% + 23px);
+					}
+				}
+
+				@media (max-width: 1100px) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	> section {
+		position: relative;
+	}
+}

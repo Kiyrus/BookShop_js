@@ -1,0 +1,61 @@
+@import '@/assets/styles/variables';
+
+.book_item_info {
+	align-self: center;
+
+	> p {
+		margin-bottom: 5px;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		white-space: pre-wrap;
+
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+	}
+
+	> h2 {
+		margin-bottom: 5px;
+
+		font-size: 1rem;
+		color: $black;
+
+		& ~ button {
+			margin-top: 16px;
+		}
+	}
+
+	> div {
+		display: flex;
+		margin-bottom: 16px;
+
+		> span {
+			margin-left: 6px;
+
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+		}
+	}
+
+	> p:not(:first-child) {
+		margin-bottom: 16px;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		white-space: pre-wrap;
+
+		& ~ p {
+			display: block;
+			margin-bottom: 0;
+			font-size: 0.812rem;
+			font-weight: inherit;
+			color: $black;
+
+			& ~ button {
+				margin-top: 16px;
+			}
+		}
+	}
+}

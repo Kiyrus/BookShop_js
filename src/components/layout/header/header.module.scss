@@ -1,0 +1,12 @@
+@import '@/assets/styles/mixins';
+
+.header {
+	@include flex;
+
+	padding: 47px 0 40px;
+	position: relative;
+
+	@media (max-width: 500px) {
+		align-items: baseline;
+	}
+}

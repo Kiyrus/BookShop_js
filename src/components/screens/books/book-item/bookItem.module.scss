@@ -1,0 +1,81 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/mixins';
+
+.book_item {
+	@include transition(all, 0.4s);
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 96px 76px;
+	padding-top: 46px;
+
+	> div:not(:last-child) {
+		@include transition(all, 0.4s);
+
+		display: flex;
+		width: 50%;
+		max-width: 434px;
+		z-index: 3;
+
+		> img {
+			min-width: 212px;
+			width: 212px;
+			height: 300px;
+			box-shadow: $box-shadow;
+			margin-right: 36px;
+		}
+	}
+
+	> div:last-child {
+		@include transition(width, 0.4s);
+
+		width: 85%;
+		text-align: center;
+		margin-bottom: 74px;
+
+		@media (max-width: 880px) {
+			width: 100%;
+		}
+
+		@media (max-width: 400px) {
+			width: 70%;
+		}
+	}
+
+	@media (max-width: 1263px) {
+		> div:not(:last-child) {
+			width: 70%;
+			max-width: 70%;
+		}
+	}
+
+	@media (max-width: 880px) {
+		> div:not(:last-child) {
+			width: 80%;
+			max-width: 80%;
+		}
+	}
+
+	@media (max-width: 700px) {
+		> div:not(:last-child) {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+
+	@media (max-width: 500px) {
+		justify-content: center;
+		gap: 50px 0;
+
+		> div:not(:last-child) {
+			flex-direction: column;
+			justify-content: center;
+
+			> img {
+				margin-right: 0;
+				margin-bottom: 20px;
+			}
+		}
+	}
+}

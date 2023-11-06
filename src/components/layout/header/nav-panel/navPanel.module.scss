@@ -1,0 +1,38 @@
+@import '@/assets/styles/mixins';
+
+.nav_panel {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	button:not(:first-child) {
+		margin-left: 40px;
+	}
+
+	button {
+		@include transition(opacity, 0.2s);
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	@media (max-width: 500px) {
+		justify-content: flex-end;
+
+		button:not(:first-child) {
+			margin-left: 20px;
+		}
+
+		> div {
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		> button {
+			order: -1;
+			margin-bottom: 20px;
+		}
+	}
+}

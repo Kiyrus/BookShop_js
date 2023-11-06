@@ -1,0 +1,137 @@
+@import '@/assets/styles/mixins';
+@import '@/assets/styles/mixins';
+
+.slider {
+	@include transition(height, 0.4s);
+
+	height: 690px;
+	position: relative;
+	margin-bottom: 130px;
+
+	> button {
+		@include transition(all, 0.2s);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		width: 50px;
+		visibility: hidden;
+		background-color: transparent;
+
+		position: absolute;
+		top: 0;
+		z-index: 3;
+
+		> img {
+			@include transition(opacity, 0.2s);
+
+			width: 30px;
+		}
+
+		&:first-child {
+			left: 0;
+
+			> img {
+				transform: rotate(180deg);
+			}
+
+			& ~ button {
+				right: 0;
+			}
+		}
+
+		&:hover {
+			> img {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	&:hover {
+		> button {
+			visibility: visible;
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	> img {
+		@include transition(opacity, 0.4s);
+
+		visibility: hidden;
+		opacity: 0.4;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		&.active {
+			width: 100%;
+			max-width: 1120px;
+			visibility: visible;
+			opacity: 1;
+			height: inherit;
+		}
+	}
+
+	> div {
+		display: flex;
+
+		position: absolute;
+		top: calc(100% + 12px);
+		left: 50%;
+		transform: translateX(-50%);
+
+		> button {
+			@include transition(all, 0.4s);
+
+			width: 12px;
+			height: 12px;
+			background-color: rgba(239, 238, 246, 1);
+			border-radius: 50%;
+
+			&:not(:first-child) {
+				margin-left: 10px;
+			}
+
+			&:is(:hover, .active) {
+				background-color: rgba(158, 152, 220, 1);
+			}
+		}
+	}
+
+	@media (max-width: 1000px) {
+		height: 600px;
+	}
+
+	@media (max-width: 880px) {
+		height: 500px;
+	}
+
+	@media (max-width: 700px) {
+		margin-bottom: 60px;
+
+		> button {
+			width: 30px;
+
+			> img {
+				width: 15px;
+			}
+		}
+	}
+
+	@media (max-width: 500px) {
+		height: 400px;
+
+		> div {
+			> button {
+				width: 10px;
+				height: 10px;
+			}
+		}
+	}
+
+	@media (max-width: 400px) {
+		height: 300px;
+	}
+}

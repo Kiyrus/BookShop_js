@@ -1,0 +1,23 @@
+.basket {
+	background-image: url('/public/shop-bag.svg');
+	width: 14px;
+	height: 17px;
+	background-color: transparent;
+
+	position: relative;
+
+	> div {
+		width: 13px;
+		height: 13px;
+		background-color: rgba(255, 53, 58, 1);
+		border-radius: 50%;
+
+		font-weight: 500;
+		color: rgba(255, 255, 255, 1);
+
+		position: absolute;
+		left: 30%;
+		bottom: -15%;
+		padding: 1px 4px 12px;
+	}
+}
